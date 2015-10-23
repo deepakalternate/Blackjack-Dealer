@@ -2,16 +2,14 @@ package in.bits.blackjackdealer.bean;
 
 public enum Type {
     
-    CHAT("CHAT"),
-    UNICAST("UNICAST"),
-    REQUEST("REQUEST"),
-    ACCEPT("ACCEPT"),
-    REJECT("REJECT"),
-    DISCONNECT("DISCONNECT"),
-    LOGOUT("LOGOUT"),
-    HELLO("HELLO"),
-    LIST("LIST"),
-    CONFLICT("CONFLICT");
+    CARD("CARD"), //Unicast
+    FOLD("FOLD"), //To Server
+    BUST("BUST"), //To Server
+    HIT("HIT"), //To Server
+    RESULT("RESULT"), //Broadcast
+    REPLAY("REPLAY"), //Broadcast
+    ACCEPT("ACCEPT"), //To Server
+    QUIT("QUIT"); //To Server
     
     Type(String typeOfMessage){
         this.typeOfMessage = typeOfMessage;
