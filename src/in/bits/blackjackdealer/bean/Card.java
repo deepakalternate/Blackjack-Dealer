@@ -1,26 +1,26 @@
 package in.bits.blackjackdealer.bean;
 
+import java.util.Objects;
 import java.util.Random;
 
 public class Card {
     
     Random randomizer;
-    private int minSuit = 1;
-    private int maxSuit = 4;
-    private int minValue = 1;
-    private int maxValue = 13;
-    private int suit;
-    private int value;
     
-    public Card() {
-        suit = randomizer.nextInt((maxSuit - minSuit) + 1) + minSuit;
-        value = randomizer.nextInt((maxValue - minValue) + 1) + minValue;
-    }
+    private final Suit suit;
+    private final int cardNumber;
+    private final int value;
 
+    public Card(Suit suit, int cardNumber, int value) {
+        this.suit = suit;
+        this.cardNumber = cardNumber;
+        this.value = value;
+    }
+    
     /**
      * @return the suit
      */
-    public int getSuit() {
+    public Suit getSuit() {
         return suit;
     }
 
@@ -30,5 +30,45 @@ public class Card {
     public int getValue() {
         return value;
     }
+    /**
+     * @return the cardNumber
+     */
+    public int getCardNumber() {
+        return cardNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "Card{" + "suit=" + suit + ", cardNumber=" + cardNumber + ", value=" + value + "}\n";
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 89 * hash + Objects.hashCode(this.suit);
+        hash = 89 * hash + this.cardNumber;
+        hash = 89 * hash + this.value;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Card other = (Card) obj;
+        if (this.suit != other.suit) {
+            return false;
+        }
+        if (this.cardNumber != other.cardNumber) {
+            return false;
+        }
+        return true;
+    }
+    
+    
     
 }
