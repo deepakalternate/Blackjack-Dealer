@@ -1,11 +1,8 @@
 package in.bits.blackjackdealer.bean;
 
 import java.util.Objects;
-import java.util.Random;
 
 public class Card {
-    
-    Random randomizer;
     
     private final Suit suit;
     private final int cardNumber;

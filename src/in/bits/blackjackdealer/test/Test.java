@@ -6,6 +6,7 @@
 package in.bits.blackjackdealer.test;
 
 import in.bits.blackjackdealer.bean.Deck;
+import in.bits.blackjackdealer.net.DealerController;
 
 /**
  *
@@ -17,5 +18,10 @@ public class Test {
         System.out.println("Size of Deck:" +deck.getDeckOfCards().size());
         System.out.println("--------------------------------------------------");
         System.out.println(deck.getDeckOfCards());
+        System.out.println("--------------------------------------------------");
+        System.out.println(deck.getACard());
+        System.out.println("Size after removal:"+deck.getDeckOfCards().size());
+        
+        DealerController dc = new DealerController();
     }
 }

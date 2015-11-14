@@ -12,15 +12,15 @@ package in.bits.blackjackdealer.bean;
 public enum Suit {
     HEARTS("HEARTS"),CLUBS("CLUBS"),DIAMONDS("DIAMONDS"),SPADES("SPADES");
     
-    private final String suit;
+    private final String suitName;
        
     
-    Suit(String suit){
-        this.suit = suit;
+    Suit(String suitName){
+        this.suitName = suitName;
     }
 
-    public String getSuit() {
-        return suit;
+    public String getSuitName() {
+        return suitName;
     }
 
     

@@ -1,15 +1,16 @@
 package in.bits.blackjackdealer.bean;
 
 import java.util.LinkedHashSet;
+import java.util.LinkedList;
 import java.util.Random;
 
 public class Deck {
 
-    private LinkedHashSet<Card> deckOfCards;
+    private LinkedList<Card> deckOfCards;
     private Random randomizer;
 
     public Deck() {
-        deckOfCards = new LinkedHashSet<Card>();
+        deckOfCards = new LinkedList<>();
         randomizer = new Random();
         populateDeck();
     }
@@ -50,8 +51,16 @@ public class Deck {
 
     }
 
-    public LinkedHashSet<Card> getDeckOfCards() {
+    public LinkedList<Card> getDeckOfCards() {
         return deckOfCards;
+    }
+    
+    public Card getACard(){
+        return deckOfCards.remove();
+    }
+    
+    public int sizeOfDeck(){
+        return deckOfCards.size();
     }
 
 }

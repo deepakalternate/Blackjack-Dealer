@@ -1,16 +1,35 @@
 package in.bits.blackjackdealer.bean;
 
+import java.util.HashMap;
+
 public class Message {
-    
-    private Type type;
-    private String user;
-    private String message;
     private Card card;
+    private String sender;
+    private Type type;
+    private String receiver;
+    private int score;
+    private HashMap<String, String> result;
     
-    public Message(Type type, Card card, String user, String message) {
+    public Message(Card card, String sender, Type type, String receiver, int score, HashMap<String, String> result){
+        this.card = card;
+        this.sender = sender;
         this.type = type;
-        this.user = user;
-        this.message = message;
+        this.receiver = receiver;
+        this.score = score;
+        this.result = result;
+    }
+
+    /**
+     * @return the card
+     */
+    public Card getCard() {
+        return card;
+    }
+
+    /**
+     * @param card the card to set
+     */
+    public void setCard(Card card) {
         this.card = card;
     }
 
@@ -29,45 +48,60 @@ public class Message {
     }
 
     /**
-     * @return the user
+     * @return the sender
      */
-    public String getUser() {
-        return user;
+    public String getSender() {
+        return sender;
     }
 
     /**
-     * @param user the user to set
+     * @param sender the sender to set
      */
-    public void setUser(String user) {
-        this.user = user;
+    public void setSender(String sender) {
+        this.sender = sender;
     }
 
     /**
-     * @return the message
+     * @return the receiver
      */
-    public String getMessage() {
-        return message;
+    public String getReceiver() {
+        return receiver;
     }
 
     /**
-     * @param message the message to set
+     * @param receiver the receiver to set
      */
-    public void setMessage(String message) {
-        this.message = message;
+    public void setReceiver(String receiver) {
+        this.receiver = receiver;
     }
 
     /**
-     * @return the card
+     * @return the score
      */
-    public Card getCard() {
-        return card;
+    public int getScore() {
+        return score;
     }
 
     /**
-     * @param card the card to set
+     * @param score the score to set
      */
-    public void setCard(Card card) {
-        this.card = card;
+    public void setScore(int score) {
+        this.score = score;
     }
+
+    /**
+     * @return the result
+     */
+    public HashMap<String, String> getResult() {
+        return result;
+    }
+
+    /**
+     * @param result the result to set
+     */
+    public void setResult(HashMap<String, String> result) {
+        this.result = result;
+    }
+    
     
 }
