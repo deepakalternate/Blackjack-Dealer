@@ -8,6 +8,7 @@ package in.bits.blackjackdealer.net;
 import in.bits.blackjackdealer.bean.Card;
 import in.bits.blackjackdealer.bean.Deck;
 import in.bits.blackjackdealer.bean.Message;
+import in.bits.blackjackdealer.bean.Type;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -33,7 +34,7 @@ public class Dealer implements DealerInterface {
             out = (ObjectOutputStream) socket.getOutputStream();
             in = (ObjectInputStream) socket.getInputStream();
             System.out.println("Connected to the Server:"+hostname+"/"+port+" using 4343");
-        
+            sendMessage(out, new Message(null, "DEALER", Type.ISDEALER, null, 0, null));
     }
     
     
