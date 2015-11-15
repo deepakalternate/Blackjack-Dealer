@@ -1,17 +1,24 @@
 package in.bits.blackjackdealer.bean;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.Random;
 
 public class Deck {
 
+    private ArrayList<Card> initialDeck;
     private LinkedList<Card> deckOfCards;
     private Random randomizer;
+    private int sizeOfDeck;
 
     public Deck() {
-        deckOfCards = new LinkedList<>();
+
+        initialDeck = new ArrayList<>();
         randomizer = new Random();
+
+        sizeOfDeck = 52;
         populateDeck();
     }
 
@@ -31,36 +38,35 @@ public class Deck {
     }
 
     private void populateDeck() {
-        int minSuit = 1;
-        int maxSuit = 4;
-        int minValue = 1;
-        int maxValue = 13;
-        int suitSelected;
-        int cardNumberSelected;
-
-        while (deckOfCards.size() < 52) {
-            suitSelected = randomizer.nextInt((maxSuit - minSuit) + 1) + minSuit;
-            cardNumberSelected = randomizer.nextInt((maxValue - minValue) + 1) + minValue;
-
-            if (cardNumberSelected >= 10) {
-                deckOfCards.add(new Card(Suit.valueOf(getSuitName(suitSelected)), cardNumberSelected, 10));
-            } else {
-                deckOfCards.add(new Card(Suit.valueOf(getSuitName(suitSelected)), cardNumberSelected, cardNumberSelected));
+        LinkedHashSet<Card> tempDeck = new LinkedHashSet<>();
+        for (int i = 1; i <= 4; i++) {
+            for (int j = 1; j <= 13; j++) {
+                if (j >= 10) {
+                    initialDeck.add(new Card(Suit.valueOf(getSuitName(i)), j, 10));
+                } else {
+                    initialDeck.add(new Card(Suit.valueOf(getSuitName(i)), j, j));
+                }
             }
         }
+        //System.out.println("Initial List------------>");
+        //System.out.println(initialDeck);
+        while (tempDeck.size() < 52) {
+            tempDeck.add(initialDeck.get(randomizer.nextInt(52)));
+        }
+        deckOfCards = new LinkedList<Card>(tempDeck);
 
     }
 
     public LinkedList<Card> getDeckOfCards() {
         return deckOfCards;
     }
-    
-    public Card getACard(){
+
+    public Card getACard() {
         return deckOfCards.remove();
     }
-    
-    public int sizeOfDeck(){
-        return deckOfCards.size();
+
+    public int sizeOfDeck() {
+        return sizeOfDeck;
     }
 
 }

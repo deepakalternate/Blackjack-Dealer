@@ -31,8 +31,8 @@ public class Dealer implements DealerInterface {
             socket = new Socket();
             socket.bind(new InetSocketAddress(4343));
             socket.connect(new InetSocketAddress(hostname, Integer.parseInt(port)));
-            out = (ObjectOutputStream) socket.getOutputStream();
-            in = (ObjectInputStream) socket.getInputStream();
+            in = new ObjectInputStream(socket.getInputStream());
+            out = new ObjectOutputStream(socket.getOutputStream());
             System.out.println("Connected to the Server:"+hostname+"/"+port+" using 4343");
             sendMessage(out, new Message(null, "DEALER", Type.ISDEALER, null, 0, null));
     }

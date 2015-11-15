@@ -22,6 +22,6 @@ public class Test {
         System.out.println(deck.getACard());
         System.out.println("Size after removal:"+deck.getDeckOfCards().size());
         
-        DealerController dc = new DealerController();
+        //DealerController dc = new DealerController();
     }
 }

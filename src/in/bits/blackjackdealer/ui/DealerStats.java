@@ -6,6 +6,7 @@
 package in.bits.blackjackdealer.ui;
 
 import in.bits.blackjackdealer.bean.Card;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
 
@@ -171,7 +172,8 @@ public class DealerStats extends javax.swing.JFrame {
         String spades = "SPADES :\t";
         String diamonds = "DIAMONDS:\t";
         String clubs = "CLUBS:\t";
-        
+        System.out.println("Cards------------------------->");
+        System.out.println(deck);
         for(Card card: deck){
             switch(card.getSuit().getSuitName()){
                 case "HEARTS": hearts+=card.getCardNumber()+",";

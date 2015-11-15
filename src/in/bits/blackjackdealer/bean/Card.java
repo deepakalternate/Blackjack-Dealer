@@ -50,20 +50,16 @@ public class Card {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null) {
+        Card other = (Card)obj;
+        if(suit.equals(other.suit)){
+            if(cardNumber == other.cardNumber){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
             return false;
         }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Card other = (Card) obj;
-        if (this.suit != other.suit) {
-            return false;
-        }
-        if (this.cardNumber != other.cardNumber) {
-            return false;
-        }
-        return true;
     }
     
     
