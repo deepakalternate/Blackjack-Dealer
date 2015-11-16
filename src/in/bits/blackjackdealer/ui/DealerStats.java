@@ -21,6 +21,7 @@ public class DealerStats extends javax.swing.JFrame {
      * Creates new form DealerStats
      */
     public DealerStats() {
+        setLocationRelativeTo(null);
         initComponents();
     }
 
@@ -66,11 +67,12 @@ public class DealerStats extends javax.swing.JFrame {
         StatsHeading.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         StatsHeading.setText("Dealer Statistics");
 
-        totalCards.setBackground(new java.awt.Color(51, 51, 51));
+        totalCards.setEditable(false);
+        totalCards.setBackground(new java.awt.Color(255, 255, 255));
         totalCards.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         totalCards.setEnabled(false);
 
-        dealtCards.setBackground(new java.awt.Color(51, 51, 51));
+        dealtCards.setEditable(false);
         dealtCards.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         dealtCards.setEnabled(false);
 
