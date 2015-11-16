@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  *
  * @author tarun
  */
-public class DealerController {
+public class DealerController extends Thread{
 
     private Dealer dealer;
     private DealerUI ui;
@@ -46,12 +46,12 @@ public class DealerController {
         });
     }
 
-    public void start() {
+    public void run() {
         while (true) {
             try {
-                if (dealer.getIn().readObject() != null) {
-                    Message message = (Message) dealer.getIn().readObject();
-
+                Message message = (Message) dealer.getIn().readObject();
+                if (message != null) {
+                    
                     if (message.getType().getTypeOfMessage().equalsIgnoreCase("HIT")) {
                         dealer.sendMessage(dealer.getOut(), new Message(dealer.getDeck().getACard(), null, Type.CARD, message.getSender(), 0, null));
                         updateStats();
