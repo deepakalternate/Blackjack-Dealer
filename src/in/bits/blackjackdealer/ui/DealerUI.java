@@ -23,6 +23,7 @@ public class DealerUI extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         stats = new DealerStats();
+        
     }
 
     /**

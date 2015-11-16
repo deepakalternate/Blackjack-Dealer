@@ -23,6 +23,7 @@ public class DealerStats extends javax.swing.JFrame {
     public DealerStats() {
         setLocationRelativeTo(null);
         initComponents();
+        
     }
 
     /**
@@ -69,11 +70,11 @@ public class DealerStats extends javax.swing.JFrame {
 
         totalCards.setEditable(false);
         totalCards.setBackground(new java.awt.Color(255, 255, 255));
-        totalCards.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        totalCards.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         totalCards.setEnabled(false);
 
         dealtCards.setEditable(false);
-        dealtCards.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        dealtCards.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         dealtCards.setEnabled(false);
 
         remainCards.setDisabledTextColor(new java.awt.Color(51, 51, 51));
