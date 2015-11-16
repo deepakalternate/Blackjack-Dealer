@@ -173,8 +173,8 @@ public class DealerStats extends javax.swing.JFrame {
         String spades = "SPADES :\t";
         String diamonds = "DIAMONDS:\t";
         String clubs = "CLUBS:\t";
-        System.out.println("Cards------------------------->");
-        System.out.println(deck);
+//        System.out.println("Cards------------------------->");
+//        System.out.println(deck);
         for(Card card: deck){
             switch(card.getSuit().getSuitName()){
                 case "HEARTS": hearts+=card.getCardNumber()+",";

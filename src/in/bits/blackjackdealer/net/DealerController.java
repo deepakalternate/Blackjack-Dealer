@@ -51,7 +51,7 @@ public class DealerController extends Thread{
             try {
                 Message message = (Message) dealer.getIn().readObject();
                 if (message != null) {
-                    
+                    System.out.println("Message received: "+message);
                     if (message.getType().getTypeOfMessage().equalsIgnoreCase("HIT")) {
                         dealer.sendMessage(dealer.getOut(), new Message(dealer.getDeck().getACard(), "DEALER", Type.CARD, message.getSender(), 0, null));
                         updateStats();

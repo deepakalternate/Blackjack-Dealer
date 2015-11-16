@@ -13,17 +13,17 @@ import in.bits.blackjackdealer.net.DealerController;
  * @author tarun
  */
 public class Test {
-    public static void main(String[] args) {
-        Deck deck = new Deck();
-        System.out.println("Size of Deck:" +deck.getDeckOfCards().size());
-        System.out.println("--------------------------------------------------");
-        System.out.println(deck.getDeckOfCards());
-        System.out.println("--------------------------------------------------");
-        System.out.println(deck.getACard());
-        System.out.println("Size after removal:"+deck.sizeOfDeck());
-        System.out.println(deck.getACard());
-        System.out.println("Size after removal:"+deck.sizeOfDeck());
-        
-        //DealerController dc = new DealerController();
-    }
+//    public static void main(String[] args) {
+//        Deck deck = new Deck();
+//        System.out.println("Size of Deck:" +deck.getDeckOfCards().size());
+//        System.out.println("--------------------------------------------------");
+//        System.out.println(deck.getDeckOfCards());
+//        System.out.println("--------------------------------------------------");
+//        System.out.println(deck.getACard());
+//        System.out.println("Size after removal:"+deck.sizeOfDeck());
+//        System.out.println(deck.getACard());
+//        System.out.println("Size after removal:"+deck.sizeOfDeck());
+//        
+//        //DealerController dc = new DealerController();
+//    }
 }
