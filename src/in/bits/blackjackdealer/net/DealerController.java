@@ -14,12 +14,13 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author tarun
  */
-public class DealerController extends Thread{
+public class DealerController extends Thread {
 
     private Dealer dealer;
     private DealerUI ui;
@@ -44,6 +45,26 @@ public class DealerController extends Thread{
 
             }
         });
+
+        ui.getDealerStats().addQuitActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int in = JOptionPane.showConfirmDialog(ui.getDealerStats(), "Are You Sure?", "Are You Sure?", JOptionPane.YES_NO_OPTION);
+
+                if (in == JOptionPane.YES_OPTION) {
+                    try {
+                        dealer.sendMessage(dealer.getOut(), new Message(null, "DEALER", Type.EXIT, null, 0, null));
+                    } catch (IOException ex) {
+                        Logger.getLogger(DealerController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    
+                    ui.getDealerStats().dispose();
+                    System.exit(0);
+                }
+            }
+        });
+
     }
 
     public void run() {
@@ -51,7 +72,7 @@ public class DealerController extends Thread{
             try {
                 Message message = (Message) dealer.getIn().readObject();
                 if (message != null) {
-                    System.out.println("Message received: "+message);
+                    System.out.println("Message received: " + message);
                     if (message.getType().getTypeOfMessage().equalsIgnoreCase("HIT")) {
                         dealer.sendMessage(dealer.getOut(), new Message(dealer.getDeck().getACard(), "DEALER", Type.CARD, message.getSender(), 0, null));
                         updateStats();
