@@ -148,6 +148,7 @@ public class DealerStats extends javax.swing.JFrame {
         int in = JOptionPane.showConfirmDialog(this,"Are You Sure?", "Are You Sure?", JOptionPane.YES_NO_OPTION);
         
         if(in == JOptionPane.YES_OPTION){
+            
             this.dispose();
         }
     }//GEN-LAST:event_closeActionPerformed
@@ -187,6 +188,8 @@ public class DealerStats extends javax.swing.JFrame {
                 default:
             }
             statsArea.setText(hearts.substring(0, hearts.length()-1)+"\n"+spades.substring(0, spades.length()-1)+"\n"+diamonds.substring(0, diamonds.length()-1)+"\n"+clubs.substring(0, clubs.length()-1));
+            this.revalidate();
+            this.repaint();
         }
     }
 

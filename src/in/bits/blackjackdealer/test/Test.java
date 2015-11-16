@@ -20,7 +20,9 @@ public class Test {
         System.out.println(deck.getDeckOfCards());
         System.out.println("--------------------------------------------------");
         System.out.println(deck.getACard());
-        System.out.println("Size after removal:"+deck.getDeckOfCards().size());
+        System.out.println("Size after removal:"+deck.sizeOfDeck());
+        System.out.println(deck.getACard());
+        System.out.println("Size after removal:"+deck.sizeOfDeck());
         
         //DealerController dc = new DealerController();
     }

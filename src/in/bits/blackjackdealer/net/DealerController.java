@@ -53,7 +53,7 @@ public class DealerController extends Thread{
                 if (message != null) {
                     
                     if (message.getType().getTypeOfMessage().equalsIgnoreCase("HIT")) {
-                        dealer.sendMessage(dealer.getOut(), new Message(dealer.getDeck().getACard(), null, Type.CARD, message.getSender(), 0, null));
+                        dealer.sendMessage(dealer.getOut(), new Message(dealer.getDeck().getACard(), "DEALER", Type.CARD, message.getSender(), 0, null));
                         updateStats();
                     }
                 }

@@ -1,7 +1,6 @@
 package in.bits.blackjack.bean;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.Random;
@@ -11,14 +10,11 @@ public class Deck {
     private ArrayList<Card> initialDeck;
     private LinkedList<Card> deckOfCards;
     private Random randomizer;
-    private int sizeOfDeck;
 
     public Deck() {
 
         initialDeck = new ArrayList<>();
         randomizer = new Random();
-
-        sizeOfDeck = 52;
         populateDeck();
     }
 
@@ -66,7 +62,7 @@ public class Deck {
     }
 
     public int sizeOfDeck() {
-        return sizeOfDeck;
+        return deckOfCards.size();
     }
 
 }
