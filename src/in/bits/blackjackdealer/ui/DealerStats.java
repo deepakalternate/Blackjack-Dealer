@@ -6,6 +6,7 @@
 package in.bits.blackjackdealer.ui;
 
 import in.bits.blackjack.bean.Card;
+import java.awt.event.ActionListener;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
@@ -145,12 +146,7 @@ public class DealerStats extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
-        int in = JOptionPane.showConfirmDialog(this,"Are You Sure?", "Are You Sure?", JOptionPane.YES_NO_OPTION);
         
-        if(in == JOptionPane.YES_OPTION){
-            
-            this.dispose();
-        }
     }//GEN-LAST:event_closeActionPerformed
 
     /**
@@ -206,4 +202,8 @@ public class DealerStats extends javax.swing.JFrame {
     private javax.swing.JTextArea statsArea;
     private javax.swing.JTextField totalCards;
     // End of variables declaration//GEN-END:variables
+
+    public void addQuitActionListener(ActionListener actionListener) {
+        close.addActionListener(actionListener);
+    }
 }
