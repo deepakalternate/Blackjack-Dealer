@@ -5,8 +5,8 @@
  */
 package in.bits.blackjackdealer.net;
 
-import in.bits.blackjackdealer.bean.Message;
-import in.bits.blackjackdealer.bean.Type;
+import in.bits.blackjack.bean.Message;
+import in.bits.blackjack.bean.Type;
 import in.bits.blackjackdealer.ui.DealerStats;
 import in.bits.blackjackdealer.ui.DealerUI;
 import java.awt.event.ActionEvent;

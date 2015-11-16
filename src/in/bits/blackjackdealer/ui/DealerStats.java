@@ -5,7 +5,7 @@
  */
 package in.bits.blackjackdealer.ui;
 
-import in.bits.blackjackdealer.bean.Card;
+import in.bits.blackjack.bean.Card;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;

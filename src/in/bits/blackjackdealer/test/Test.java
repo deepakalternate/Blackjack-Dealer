@@ -5,7 +5,7 @@
  */
 package in.bits.blackjackdealer.test;
 
-import in.bits.blackjackdealer.bean.Deck;
+import in.bits.blackjack.bean.Deck;
 import in.bits.blackjackdealer.net.DealerController;
 
 /**

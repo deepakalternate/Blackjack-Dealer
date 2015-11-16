@@ -5,10 +5,10 @@
  */
 package in.bits.blackjackdealer.net;
 
-import in.bits.blackjackdealer.bean.Card;
-import in.bits.blackjackdealer.bean.Deck;
-import in.bits.blackjackdealer.bean.Message;
-import in.bits.blackjackdealer.bean.Type;
+import in.bits.blackjack.bean.Card;
+import in.bits.blackjack.bean.Deck;
+import in.bits.blackjack.bean.Message;
+import in.bits.blackjack.bean.Type;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -64,6 +64,7 @@ public class Dealer implements DealerInterface {
     }
     
     public void sendMessage(ObjectOutputStream out,Message message) throws IOException{
+        System.out.println(message);
         out.writeObject(message);
     }
     

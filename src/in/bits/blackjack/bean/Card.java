@@ -1,10 +1,12 @@
-package in.bits.blackjackdealer.bean;
+package in.bits.blackjack.bean;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Card {
+public class Card implements Serializable{
     
     private final Suit suit;
+    public static final long serialVersionUID = 41L;
     private final int cardNumber;
     private final int value;
 

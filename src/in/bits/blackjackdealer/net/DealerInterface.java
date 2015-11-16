@@ -5,7 +5,7 @@
  */
 package in.bits.blackjackdealer.net;
 
-import in.bits.blackjackdealer.bean.Card;
+import in.bits.blackjack.bean.Card;
 
 /**
  *
