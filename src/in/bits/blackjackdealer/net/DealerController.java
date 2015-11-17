@@ -58,7 +58,7 @@ public class DealerController extends Thread {
                     } catch (IOException ex) {
                         Logger.getLogger(DealerController.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    
+
                     ui.getDealerStats().dispose();
                     System.exit(0);
                 }
@@ -75,6 +75,9 @@ public class DealerController extends Thread {
                     System.out.println("Message received: " + message);
                     if (message.getType().getTypeOfMessage().equalsIgnoreCase("HIT")) {
                         dealer.sendMessage(dealer.getOut(), new Message(dealer.getDeck().getACard(), "DEALER", Type.CARD, message.getSender(), 0, null));
+                        updateStats();
+                    } else if (message.getType().getTypeOfMessage().equalsIgnoreCase("RESTART")) {
+                        dealer.resetDeck();
                         updateStats();
                     }
                 }

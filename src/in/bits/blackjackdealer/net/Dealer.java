@@ -67,5 +67,14 @@ public class Dealer implements DealerInterface {
         System.out.println(message);
         out.writeObject(message);
     }
+
+    public void setDeck(Deck deck) {
+        this.deck = deck;
+    }
+    
+    public void resetDeck(){
+        setDeck(new Deck());
+        System.gc();
+    }
     
 }
